@@ -1,0 +1,235 @@
+/* styles.css */
+
+/* Styles globaux pour le corps de la page */
+body {
+    font-family: 'Times new roman', sans-serif;
+    background-color: #f0f4f8; /* Couleur de fond légèrement grise */
+    color: #333; /* Couleur du texte principale */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Styles pour l'en-tête */
+header {
+    width: 100%;
+    background-color: #2b6cb0; /* Couleur de fond bleue */
+    padding: 15px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre plus marquée */
+    z-index: 1000;
+}
+
+/* Styles pour le menu de navigation */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Styles pour le logo */
+.logo img {
+    height: 50px; /* Taille du logo */
+}
+
+/* Styles pour le menu de navigation */
+nav ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+.nav-link {
+    color: #fff; /* Couleur des liens dans le menu */
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s, border-bottom 0.3s;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: #e2e8f0; /* Couleur du texte au survol */
+}
+
+.nav-link:hover::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #e2e8f0; /* Sous-lignement au survol */
+    border-radius: 4px; /* Bord arrondi pour l'effet de sous-lignement */
+}
+
+/* Styles pour le sélecteur de langue */
+.language-select {
+    padding: 10px 15px;
+    border-radius: 12px; /* Coins arrondis */
+    border: 2px solid #e2e8f0; /* Bordure légère */
+    background-color: #fff; /* Couleur de fond du sélecteur */
+    font-size: 1rem;
+    color: #333; /* Couleur du texte */
+    margin-left: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.language-select:hover {
+    border-color: #2b6cb0; /* Changement de couleur au survol */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Ombre plus marquée au survol */
+}
+
+/* Styles du contenu principal */
+main {
+    margin-top: 80px; /* Ajout de l'espace pour l'en-tête fixe */
+    width: 100%;
+    max-width: 1000px;
+    padding: 20px;
+}
+
+/* Styles pour chaque section */
+.section {
+    margin-bottom: 50px;
+    padding: 30px;
+    background-color: #fff; /* Couleur de fond blanche pour les sections */
+    border-radius: 16px; /* Coins arrondis */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre douce et plus marquée */
+    transition: box-shadow 0.3s, transform 0.3s; /* Animation de l'ombre et de la transformation */
+}
+
+.section:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25); /* Ombre plus marquée au survol */
+    transform: translateY(-5px); /* Légère élévation au survol */
+}
+
+/* Styles pour le titre principal */
+h1 {
+    color: #1a202c; /* Couleur du texte sombre pour le titre */
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Styles pour les sous-titres */
+h2 {
+    color: #2b6cb0; /* Couleur bleue pour les sous-titres */
+    margin-top: 0;
+    border-bottom: 2px solid #2b6cb0; /* Bordure sous le titre */
+    padding-bottom: 5px;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Styles pour les champs de formulaire */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 12px; /* Coins arrondis */
+    border: 2px solid #e2e8f0; /* Bordure légère */
+    background-color: #fff; /* Couleur de fond blanche */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    font-size: 1rem;
+    color: #333; /* Couleur du texte */
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+textarea:focus {
+    border-color: #2b6cb0; /* Couleur de bordure au focus */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Ombre au focus */
+    outline: none;
+}
+
+/* Styles pour le bouton de formulaire */
+button {
+    padding: 15px 25px;
+    border-radius: 12px; /* Coins arrondis */
+    border: none;
+    background-color: #2b6cb0; /* Couleur bleue */
+    color: #fff; /* Couleur du texte */
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s; /* Animation de couleur de fond et d'ombre */
+}
+
+button:hover {
+    background-color: #1e4d8f; /* Couleur de fond au survol */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2); /* Ombre au survol */
+}
+
+/* Styles pour les éléments de carrousel */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px; /* Coins arrondis du carrousel */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+.carousel-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-item {
+    min-width: 100%;
+    border-radius: 16px; /* Coins arrondis des images */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.8); /* Fond semi-transparent */
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Ombre douce */
+    cursor: pointer;
+    font-size: 2rem;
+    color: #2b6cb0; /* Couleur des flèches */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.carousel-control:hover {
+    background-color: #2b6cb0; /* Changement de couleur au survol */
+    color: #fff; /* Couleur des flèches au survol */
+}
+
+/* Styles pour les services */
+.service {
+    background-color: #e2e8f0; /* Fond des services */
+    padding: 20px;
+    border-radius: 12px; /* Coins arrondis */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombre douce */
+}
+
+/* Styles pour les titres de services */
+.service h3 {
+    color: #2b6cb0; /* Couleur bleue pour les titres des services */

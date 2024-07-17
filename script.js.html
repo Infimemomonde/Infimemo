@@ -1,0 +1,67 @@
+// script.js
+
+// Liste pour stocker les mémoires
+let memories = [];
+
+// Fonction pour publier un mémoire
+function publishMemory() {
+    const title = document.getElementById('title').value.trim();
+    const content = document.getElementById('content').value.trim();
+
+    if (title && content) {
+        // Ajouter le mémoire à la liste
+        memories.push({ title, content });
+        // Réinitialiser les champs de saisie
+        document.getElementById('title').value = '';
+        document.getElementById('content').value = '';
+        // Mettre à jour la liste des mémoires
+        displayMemories();
+    } else {
+        alert('Veuillez entrer un titre et un contenu pour le mémoire.');
+    }
+}
+
+// Fonction pour afficher les mémoires
+function displayMemories() {
+    const memoriesContainer = document.getElementById('memories');
+    memoriesContainer.innerHTML = '';
+
+    memories.forEach((memory, index) => {
+        const memoryElement = document.createElement('div');
+        memoryElement.className = 'memory-item';
+        memoryElement.innerHTML = `
+            <h3>${memory.title}</h3>
+            <p>${memory.content}</p>
+        `;
+        memoriesContainer.appendChild(memoryElement);
+    });
+}
+
+// Fonction pour rechercher parmi les mémoires
+function searchMemories() {
+    const query = document.getElementById('searchQuery').value.toLowerCase();
+    const filteredMemories = memories.filter(memory => memory.title.toLowerCase().includes(query));
+    displayFilteredMemories(filteredMemories);
+}
+
+// Fonction pour afficher les mémoires filtrés
+function displayFilteredMemories(filteredMemories) {
+    const memoriesContainer = document.getElementById('memories');
+    memoriesContainer.innerHTML = '';
+
+    filteredMemories.forEach(memory => {
+        const memoryElement = document.createElement('div');
+        memoryElement.className = 'memory-item';
+        memoryElement.innerHTML = `
+            <h3>${memory.title}</h3>
+            <p>${memory.content}</p>
+        `;
+        memoriesContainer.appendChild(memoryElement);
+    });
+}
+
+// Ajouter les gestionnaires d'événements après le chargement de la page
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('publishButton').addEventListener('click', publishMemory);
+    document.getElementById('searchQuery').addEventListener('input', searchMemories);
+});
